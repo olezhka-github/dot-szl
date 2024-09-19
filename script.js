@@ -1,3 +1,4 @@
+// Ваш список дозволених VAM кодів
 const validVAMCodes = ["gqpm417s0x", "rubobr72u1", "gba373qjch","z5s984v532","kt034ihc"]; // Замініть на реальні коди
 
 function getCookie(name) {
