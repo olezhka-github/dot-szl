@@ -1,3 +1,5 @@
+document.getElementById('homework').style.display = 'none';
+
 // Хешовані VAM-коди користувачів
 const vamCodes = {
     "cf17f8a1642a3af3718d6747f8a987ff": "Олег Гавришків",   // Пароль: "fw28jq3f"
