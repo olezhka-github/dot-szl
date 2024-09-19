@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -6,26 +7,19 @@
     <title>Домашка 6-Г</title>
 </head>
 <body>
-    <div id="auth"class="glass-container">
-        <hw>Для користування сайтом введіть VAM код.</hw>
-        <hws>Увага!Користуватись можуть лише Олійник,Будзівула,Кілик,Гусельникова!Я можу вам надіслати особистий VAM код.</hws>
+    <div id="auth" class="glass-container">
+        <h1>Для користування сайтом введіть VAM код.</h1>
         <textarea name="vamCodeArea" id="vam" placeholder="VectorAccountManagement код"></textarea>
-        <hws>Для вирішення ситуації, зверніться до олежки</hws>
         <button onclick="submitVAMCode()">Увійти</button>
+        <p>Для вирішення ситуації, зверніться до Олега</p>
         <button onclick="window.open('tel:0964437786')">Подзвонити</button>
     </div>
-    <div id="homework" class="glass-container">
-        <hw>Домашнє завдання на 20.09,п`ятниця</hw>
-        <hws>1.Математика / №122, 128, 130</hws>
-        <hws>2.Інформатика</hws>
-        <hws>3.Українська мова</hws>
-        <hws>4.Музика</hws>
-        <hws>5.Географія</hws>
-        <hws>6.Зарубіжна література / Характеристика Геракла або Прометея (на вибір)</hws>
-        <hw>Знадобиться коли в НІТ домашнього немає!</hw>
-        <button onclick="alert('пасхалка пуста бо ідей нема.порадь мені пасхалку будь ласка')"></button>
-        
+
+    <div id="homework" style="display: none;">
+        <h1>Ласкаво просимо до вашої домашки!</h1>
+        <p>Тут ви можете знайти вашу домашку.</p>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
