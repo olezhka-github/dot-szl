@@ -47,6 +47,8 @@ function submitVAMCode() {
         alert("Успішна авторизація, вітаю " + user + "!");
         setCookie("authUser", user, 7);  // Записуємо в cookies на 7 днів
         document.getElementById("vam").value = '';  // Очищаємо поле вводу після успішного входу
+        document.getElementById("auth").style.display = "none";  // Приховуємо блок авторизації
+        document.getElementById("homework").style.display = "block";  // Показуємо блок з домашкою
     } else {
         alert("Невірний VAM-код! Ви заблоковані назавжди.");
         setCookie("blocked", true, 365);  // Блокуємо користувача на рік
@@ -66,7 +68,11 @@ function checkAuthStatus() {
 
     if (authUser) {
         alert("Ви вже авторизовані як " + authUser + ".");
-        document.getElementById("vam").disabled = true;
+        document.getElementById("auth").style.display = "none";  // Приховуємо блок авторизації
+        document.getElementById("homework").style.display = "block";  // Показуємо блок з домашкою
+    } else {
+        document.getElementById("auth").style.display = "block";  // Показуємо блок авторизації
+        document.getElementById("homework").style.display = "none";  // Приховуємо блок з домашкою
     }
 }
 
