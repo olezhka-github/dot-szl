@@ -1,10 +1,7 @@
 // Хешовані VAM-коди користувачів
 const vamCodes = {
-    "cf17f8a1642a3af3718d6747f8a987ff": "Олег Гавришків",   // Пароль: "fw28jq3f"
-    "0dfb91e942b295d98f21e92b9a6633c0": "Володя Будзівула", // Пароль: "fnw0v7q0"
-    "f6436d18083c5cf1dbd26d6d6b80a0bb": "Марія Олійник",    // Пароль: "e5k4f8t4"
-    "b681aeff3f9a54fe73553f3b9f344187": "Остап Кілик",      // Пароль: "qgzgxt2x"
-    "3d8c58fa5875f5b056c70548e27d53b4": "Анна Гусельникова" // Пароль: "5h1qrkuu"
+    "5f4dcc3b5aa765d61d8327deb882cf99": "Oleg",   // Пароль: "password"
+    "098f6bcd4621d373cade4e832627b4f6": "Anna"    // Пароль: "test"
 };
 
 // Функція для хешування введеного VAM-коду (MD5)
@@ -23,16 +20,16 @@ function setCookie(name, value, days) {
 function getCookie(name) {
     let nameEQ = name + "=";
     let cookiesArray = document.cookie.split(';');
-    for (let i = 0; i < cookiesArray.length; i++) {
+    for(let i = 0; i < cookiesArray.length; i++) {
         let c = cookiesArray[i].trim();
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
 
 // Функція для обробки введеного VAM-коду
 function submitVAMCode() {
-    let vamCode = document.getElementById("vam").value.trim(); // Видаляємо зайві пробіли
+    let vamCode = document.getElementById("vam").value.trim();
     let hashedVamCode = hashPassword(vamCode);
 
     let blocked = getCookie("blocked");
@@ -42,13 +39,10 @@ function submitVAMCode() {
     }
 
     // Перевірка, чи є VAM-код у списку
-    if (vamCodes.hasOwnProperty(hashedVamCode)) {
+    if (vamCodes[hashedVamCode]) {
         let user = vamCodes[hashedVamCode];
         alert("Успішна авторизація, вітаю " + user + "!");
         setCookie("authUser", user, 7);  // Записуємо в cookies на 7 днів
-        document.getElementById("vam").value = '';  // Очищаємо поле вводу після успішного входу
-        document.getElementById("auth").style.display = "none";  // Приховуємо блок авторизації
-        document.getElementById("homework").style.display = "block";  // Показуємо блок з домашкою
     } else {
         alert("Невірний VAM-код! Ви заблоковані назавжди.");
         setCookie("blocked", true, 365);  // Блокуємо користувача на рік
@@ -68,11 +62,7 @@ function checkAuthStatus() {
 
     if (authUser) {
         alert("Ви вже авторизовані як " + authUser + ".");
-        document.getElementById("auth").style.display = "none";  // Приховуємо блок авторизації
-        document.getElementById("homework").style.display = "block";  // Показуємо блок з домашкою
-    } else {
-        document.getElementById("auth").style.display = "block";  // Показуємо блок авторизації
-        document.getElementById("homework").style.display = "none";  // Приховуємо блок з домашкою
+        document.getElementById("vam").disabled = true;
     }
 }
 
