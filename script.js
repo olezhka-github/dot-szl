@@ -1,12 +1,10 @@
-
-document.getElementById('homework').style.display = 'none';
-
 // Хешовані VAM-коди користувачів
-
-
 const vamCodes = {
-    "5f4dcc3b5aa765d61d8327deb882cf99": "Oleg",   // Пароль: "password"
-    "098f6bcd4621d373cade4e832627b4f6": "Anna"    // Пароль: "test"
+    "cf17f8a1642a3af3718d6747f8a987ff": "Олег Гавришків",   // Пароль: "fw28jq3f"
+    "0dfb91e942b295d98f21e92b9a6633c0": "Володя Будзівула", // Пароль: "fnw0v7q0"
+    "f6436d18083c5cf1dbd26d6d6b80a0bb": "Марія Олійник",    // Пароль: "e5k4f8t4"
+    "b681aeff3f9a54fe73553f3b9f344187": "Остап Кілик",      // Пароль: "qgzgxt2x"
+    "3d8c58fa5875f5b056c70548e27d53b4": "Анна Гусельникова" // Пароль: "5h1qrkuu"
 };
 
 // Функція для хешування введеного VAM-коду (MD5)
@@ -47,8 +45,6 @@ function submitVAMCode() {
     if (vamCodes[hashedVamCode]) {
         let user = vamCodes[hashedVamCode];
         alert("Успішна авторизація, вітаю " + user + "!");
-        document.getElementById('homework').style.display = 'flex';
-        document.getElementById('auth').style.display = 'none';
         setCookie("authUser", user, 7);  // Записуємо в cookies на 7 днів
     } else {
         alert("Невірний VAM-код! Ви заблоковані назавжди.");
@@ -68,11 +64,8 @@ function checkAuthStatus() {
     }
 
     if (authUser) {
-        alert("Привіт," + authUser + "!");
-        document.getElementById('auth').style.display = 'none';
+        alert("Ви вже авторизовані як " + authUser + ".");
         document.getElementById("vam").disabled = true;
-        document.getElementById('homework').style.display = 'flex';
-
     }
 }
 
