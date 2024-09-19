@@ -1,5 +1,3 @@
-document.getElementById('homework').style.display = 'none';
-
 // Хешовані VAM-коди користувачів
 const vamCodes = {
     "cf17f8a1642a3af3718d6747f8a987ff": "Олег Гавришків",   // Пароль: "fw28jq3f"
@@ -25,16 +23,16 @@ function setCookie(name, value, days) {
 function getCookie(name) {
     let nameEQ = name + "=";
     let cookiesArray = document.cookie.split(';');
-    for(let i = 0; i < cookiesArray.length; i++) {
+    for (let i = 0; i < cookiesArray.length; i++) {
         let c = cookiesArray[i].trim();
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
 
 // Функція для обробки введеного VAM-коду
 function submitVAMCode() {
-    let vamCode = document.getElementById("vam").value.trim();
+    let vamCode = document.getElementById("vam").value.trim(); // Видаляємо зайві пробіли
     let hashedVamCode = hashPassword(vamCode);
 
     let blocked = getCookie("blocked");
@@ -44,10 +42,11 @@ function submitVAMCode() {
     }
 
     // Перевірка, чи є VAM-код у списку
-    if (vamCodes[hashedVamCode]) {
+    if (vamCodes.hasOwnProperty(hashedVamCode)) {
         let user = vamCodes[hashedVamCode];
         alert("Успішна авторизація, вітаю " + user + "!");
         setCookie("authUser", user, 7);  // Записуємо в cookies на 7 днів
+        document.getElementById("vam").value = '';  // Очищаємо поле вводу після успішного входу
     } else {
         alert("Невірний VAM-код! Ви заблоковані назавжди.");
         setCookie("blocked", true, 365);  // Блокуємо користувача на рік
