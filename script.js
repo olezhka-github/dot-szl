@@ -1,4 +1,9 @@
+
+document.getElementById('homework').style.display = 'none';
+
 // Хешовані VAM-коди користувачів
+
+
 const vamCodes = {
     "5f4dcc3b5aa765d61d8327deb882cf99": "Oleg",   // Пароль: "password"
     "098f6bcd4621d373cade4e832627b4f6": "Anna"    // Пароль: "test"
@@ -42,6 +47,8 @@ function submitVAMCode() {
     if (vamCodes[hashedVamCode]) {
         let user = vamCodes[hashedVamCode];
         alert("Успішна авторизація, вітаю " + user + "!");
+        document.getElementById('homework').style.display = 'flex';
+        document.getElementById('auth').style.display = 'none';
         setCookie("authUser", user, 7);  // Записуємо в cookies на 7 днів
     } else {
         alert("Невірний VAM-код! Ви заблоковані назавжди.");
@@ -61,8 +68,11 @@ function checkAuthStatus() {
     }
 
     if (authUser) {
-        alert("Ви вже авторизовані як " + authUser + ".");
+        alert("Привіт," + authUser + "!");
+        document.getElementById('auth').style.display = 'none';
         document.getElementById("vam").disabled = true;
+        document.getElementById('homework').style.display = 'flex';
+
     }
 }
 
