@@ -52,4 +52,4 @@ if (loggedIn === 'true') {
     document.getElementById('homework').style.display = 'flex';
 } else {
     document.getElementById('homework').style.display = 'none';
-}
+};
