@@ -22,7 +22,7 @@ function setCookie(name, value, days) {
 function submitVAMCode() {
     const vamInput = document.getElementById('vam').value.trim();
     const blocked = getCookie('blocked');
-
+}
     // Перевіряємо, чи користувач заблокований
     if (blocked === 'true') {
         alert('Ви заблоковані. Зверніться до адміністратора.');
