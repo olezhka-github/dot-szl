@@ -36,7 +36,7 @@ function submitVAMCode() {
         document.getElementById('homework').style.display = 'flex';
     } else {
         if (ExpiredVAMcodes.includes(vamInput)) {
-            alert('Ви ввели VAM код що вже був використаний іншим учнем/ученицею. В доступі відмовлено
+            alert('Ви ввели VAM код що вже був використаний іншим учнем/ученицею. В доступі відмовлено')
         }else {
         // Невірний код, блокування користувача
         setCookie('blocked', 'true'); // Блокуємо назавжди
