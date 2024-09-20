@@ -1,6 +1,5 @@
 // Ваш список дозволених VAM кодів
-const validVAMCodes = ["rubobr72u1", "gba373qjch","z5s984v532","kt034ihc"]; // Замініть на реальні коди
-const ExpiredVAMcodes = ["gqpm417s0x"]
+const validVAMCodes = ["gqpm417s0x", "rubobr72u1", "gba373qjch","z5s984v532","kt034ihc"]; // Замініть на реальні коди
 
 function getCookie(name) {
     const value = `; ${document.cookie}`;
@@ -22,7 +21,7 @@ function setCookie(name, value, days) {
 function submitVAMCode() {
     const vamInput = document.getElementById('vam').value.trim();
     const blocked = getCookie('blocked');
-}
+
     // Перевіряємо, чи користувач заблокований
     if (blocked === 'true') {
         alert('Ви заблоковані. Зверніться до адміністратора.');
@@ -35,9 +34,6 @@ function submitVAMCode() {
         document.getElementById('auth').style.display = 'none';
         document.getElementById('homework').style.display = 'flex';
     } else {
-        if (ExpiredVAMcodes.includes(vamInput)) {
-            alert('Ви ввели VAM код що вже був використаний іншим учнем/ученицею. В доступі відмовлено')
-        }else {
         // Невірний код, блокування користувача
         setCookie('blocked', 'true'); // Блокуємо назавжди
         alert('Невірний VAM код. Ви заблоковані.');
@@ -52,4 +48,4 @@ if (loggedIn === 'true') {
     document.getElementById('homework').style.display = 'flex';
 } else {
     document.getElementById('homework').style.display = 'none';
-};
+}
