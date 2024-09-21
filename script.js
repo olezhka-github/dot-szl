@@ -1,4 +1,5 @@
 // Ваш список дозволених VAM кодів
+
 const validVAMCodes = ["gqpm417s0x", "rubobr72u1", "gba373qjch","z5s984v532","kt034ihc","akk13m1top"]; // Замініть на реальні коди
 
 function getCookie(name) {
@@ -48,4 +49,8 @@ if (loggedIn === 'true') {
     document.getElementById('homework').style.display = 'flex';
 } else {
     document.getElementById('homework').style.display = 'none';
+}
+
+function fiftytwo() {
+    window.location.replace("https://ct-hub.onrender.com/")
 }
