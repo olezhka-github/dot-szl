@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Домашка 6-Г</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>сайт для сігм як ти ^ .SZL</title>
+    <noscript>Сайт не працює,вибач за незручності!</noscript>
 </head>
 <body>
-    <szl>.SZL</szl>
-    <div id="auth" class="glass-container">
-        <hw>Сайт призупиняє роботу. Детальніше в мене в вайбері.</hw>
-        <hws></hws>
-        <!--<textarea name="vamCodeArea" id="vam" placeholder="VectorAccountManagement код"></textarea> -->
-        <hws>Для вирішення ситуації, зверніться до олежки</hws>
-        <button onclick="submitVAMCode()">Увійти</button>
-        <button onclick="window.open('tel:0964437786')">Подзвонити</button>
+    <div id="auth" style="display: none;">
+    <mn>Привіт!</mn>
+    <br></br>
+    <mn2>Це нова .SZL - майже аналог НІТ</mn2>
+    <br>
+    <mn2>принаймні,тут не пише твоє прізвище та ім'я</mn2>
+    <br>
+    <mn2>デミッドはとてもいい人だよ</mn2>
+    <br>
+    <button onclick="authFunc()" class="btn-grad">Почнемо?</button>
+    
+
     </div>
-    <toolbar>
-        SZL = Sonar Zolochiv    
-        <button onclick="alert('дякую що натиснув сюди.словом - я створюю секретний проєкт.посилання під іншою кнопкою')">посхалко</button>
-        <button onclick="fiftytwo()">посхалко 2</button>
-    </toolbar>
-    <div id="homework" class="glass-container">
-        <hw>Сайт призупиняє роботу по причині не потрібності.</hw>
-        <hws>Сайт призупиняє роботу 23.09 через те що в НІТ пише не трохи а все Д.З</hws>
-        <hws>Система буде перенесена на новий сайт який ви можете затестувати</hws>
-        <hws>Зайти на сайт :</hws>
-        <button onclick="window.open('https://ct-hub.onrender.com/')">/CT/</button>
-       
-        
-        <button onclick="alert('пасхалка пуста бо ідей нема. порадь мені пасхалку будь ласка')">нажми на мене!</button>
-    </body>
+    <div id="anonim_forum" style="display: none;">
+        <mn>Це анонімний форум.</mn>
+        <br>
+        <mn2>Тут ти можеш висказатись як завгодно - і ніхто не знатиме що це написав / написала</mn2>
+        <mn3> ти.</mn3>
+        <br>
+        <mn>Недавні пости:</mn>
+        <br>
+        <posts>03.10.2024 : Я олег,і я можу сказати це : поки я не зробив норм системи для форуму пишіть на вайбер якщо хочете щось тут написати.</posts>
+    </div>
+    <div id="main-page" style="display: none;">
+        <mn>Головна сторінка</mn>
+        <br>
+        <button class="btn-grad" id="chatik" onclick="alert('Це не допрацьовано - та гарантую що буде все')">чатик</button>
+        <br>
+        <button class="btn-grad" id="anonim-forum" onclick="afFunc()">анонімний форум</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
