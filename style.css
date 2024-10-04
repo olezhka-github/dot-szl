@@ -48,6 +48,13 @@ button {
     color: #fff;
     text-decoration: none;
   }
+.btn-calc {
+    background-color: #5d83ed;
+    transition: 0.5s;
+}
+.btn-calc:hover {
+    background-color: #9caee0;
+}
 mn3 {
     color: gold;
 }
