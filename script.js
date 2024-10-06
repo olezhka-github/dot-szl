@@ -8,6 +8,10 @@ calc.style.display = 'none';
 
 auth.style.display = 'block';
 
+function BB8888BB() {
+    alert('1.310155555V / 5 скрпт елмнт / NP / 1 FUNC / 4 func / DEBUGMODE / alert() ')
+}
+
 function authFunc() {
     auth.style.display = 'none';
     main_page.style.display = 'block';
