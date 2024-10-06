@@ -1,4 +1,4 @@
-alert('сайт оптимізований для комп'ютерів тож - вибач за не гарний інтерфейс')
+alert('сайт оптимізований для комп`ютерів тож - вибач за не гарний інтерфейс')
 
 const auth = document.getElementById('auth');
 const main_page = document.getElementById('main-page');
